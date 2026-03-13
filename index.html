@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Academic Performance Predictor</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:linear-gradient(120deg,#4facfe,#00f2fe);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+width:350px;
+box-shadow:0px 10px 25px rgba(0,0,0,0.2);
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button{
+width:100%;
+padding:10px;
+background:#4facfe;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0077ff;
+}
+
+.result{
+margin-top:20px;
+text-align:center;
+font-weight:bold;
+font-size:18px;
+color:#333;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Academic Performance Predictor</h2>
+
+<form action="/predict" method="post">
+
+<input type="number" name="study_hours" placeholder="Study Hours" step="0.1" required>
+
+<input type="number" name="attendance" placeholder="Attendance (%)" required>
+
+<input type="number" name="gpa" placeholder="Previous GPA" step="0.1" required>
+
+<input type="number" name="assignments" placeholder="Assignments Completed" required>
+
+<button type="submit">Predict Performance</button>
+
+</form>
+
+<div class="result">
+{{ prediction_text }}
+</div>
+
+</div>
+
+</body>
+</html>
